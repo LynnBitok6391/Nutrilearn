@@ -1,6 +1,7 @@
 # Nutrilearn
 
 Nutrilearn is a nutrition and wellness web application that provides personalized meal recommendations, quizzes, and community features to help users achieve their dietary goals.
+Access it through https://nutri-learn.netlify.app/
 
 ## Features
 
