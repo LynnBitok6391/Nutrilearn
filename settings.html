@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NutriLearn - Settings</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="dashboard-layout">
+    <aside class="sidebar" id="sidebar">
+      <ul>
+        <li><a href="dashboard.html"><span class="icon">🏠</span><span class="text">Dashboard</span></a></li>
+        <li><a href="meal-recommender.html"><span class="icon">🍲</span><span class="text">Meal Recommender</span></a></li>
+        <li><a href="quizzes.html"><span class="icon">📘</span><span class="text">Quizzes</span></a></li>
+        <li><a href="community.html"><span class="icon">🌱</span><span class="text">Recipes</span></a></li>
+        <li><a href="chatbot.html"><span class="icon">🤖</span><span class="text">Chatbot</span></a></li>
+        <li><a href="settings.html" class="active"><span class="icon">⚙️</span><span class="text">Settings</span></a></li>
+      </ul>
+    </aside>
+    <main class="main-content">
+      <h1>Settings</h1>
+
+      <section class="settings-section card">
+        <h2>Profile Settings</h2>
+        <form id="profileSettingsForm">
+          <div class="input-box">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" />
+          </div>
+          <div class="input-box">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" />
+          </div>
+          <div class="input-box">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter new password" />
+          </div>
+          <button type="submit" class="btn">Update Profile</button>
+        </form>
+      </section>
+
+      <section class="settings-section card">
+        <h2>Preferences</h2>
+        <form id="preferencesForm">
+          <div class="input-box">
+            <label for="themeToggle">Theme</label>
+            <select id="themeToggle" name="themeToggle">
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </select>
+          </div>
+          <div class="input-box">
+            <label for="fontSize">Font Size</label>
+            <select id="fontSize" name="fontSize">
+              <option value="small">Small</option>
+              <option value="medium" selected>Medium</option>
+              <option value="large">Large</option>
+            </select>
+          </div>
+          <button type="submit" class="btn">Save Preferences</button>
+        </form>
+      </section>
+
+      <section class="settings-section card">
+        <h2>Notifications</h2>
+        <form id="notificationsForm">
+          <div class="toggle-container">
+            <label class="toggle-switch">
+              <input type="checkbox" id="notificationsToggle" name="notificationsToggle" checked />
+              <span class="slider"></span>
+            </label>
+            <span class="toggle-label">Enable Notifications</span>
+          </div>
+          <button type="submit" class="btn">Save Notifications</button>
+        </form>
+      </section>
+
+      <section class="settings-section card">
+        <h2>Privacy</h2>
+        <form id="privacyForm">
+          <div class="toggle-container">
+            <label class="toggle-switch">
+              <input type="checkbox" id="dataUsageToggle" name="dataUsageToggle" />
+              <span class="slider"></span>
+            </label>
+            <span class="toggle-label">Allow Data Usage</span>
+          </div>
+          <button type="submit" class="btn">Save Privacy Settings</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/ui.js"></script>
+</body>
+</html>

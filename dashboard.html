@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NutriLearn - Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="dashboard-layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="user-info" id="userInfo" style="padding: 15px; border-bottom: 1px solid #ddd; margin-bottom: 10px; display: none;">
+        <p style="margin: 0; font-weight: bold;">Welcome, <span id="userName"></span></p>
+      </div>
+      <ul>
+        <li><a href="dashboard.html" class="active">Dashboard</a></li>
+        <li><a href="meal-recommender.html">Meal Recommender</a></li>
+        <li><a href="quizzes.html">Quizzes</a></li>
+        <li><a href="community.html">Recipes</a></li>
+        <li><a href="chatbot.html">Chatbot</a></li>
+        <li><a href="settings.html">Settings</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><button id="logoutBtn" style="width: 100%; padding: 10px; background: #dc3545; color: white; border: none; border-radius: 4px; cursor: pointer; display: none;">Logout</button></li>
+      </ul>
+    </aside>
+    <main class="main-content">
+      <h1>Welcome to NutriLearn Dashboard</h1>
+      <p>Track your nutrition journey and achieve your health goals!</p>
+      <div class="stats-cards">
+        <div class="stat-card">
+          <h3>Health Score</h3>
+          <p>85%</p>
+        </div>
+        <div class="stat-card">
+          <h3>Quizzes Completed</h3>
+          <p>12</p>
+        </div>
+        <div class="stat-card">
+          <h3>Meals Planned</h3>
+          <p>45</p>
+        </div>
+      </div>
+    </main>
+  </div>
+  <div id="chatbotWidget">
+    <button id="chatbotToggle" aria-label="Toggle Chatbot" title="NutriLearn AI Assistant">🤖</button>
+    <div id="chatbotWindow" class="hidden">
+      <div class="chatbot-header">
+        <h2>NutriLearn AI Assistant</h2>
+        <button id="chatbotClose" aria-label="Close Chatbot">×</button>
+      </div>
+      <div id="chatMessages" class="chat-messages"></div>
+      <form id="chatForm" class="chat-form">
+        <input type="text" id="chatInput" name="chatInput" placeholder="Ask me about health, food, or learning..." autocomplete="off" required />
+        <button type="submit" class="btn send-btn">Send</button>
+      </form>
+    </div>
+  </div>
+  <script src="js/ui.js"></script>
+</body>
+</html>

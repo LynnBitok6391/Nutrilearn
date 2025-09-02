@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NutriLearn - Register Project</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="page-layout">
+    <header class="top-nav">
+      <div class="logo">
+        <img src="images/logo.png" alt="NutriLearn Logo" />
+        <span>NutriLearn</span>
+      </div>
+      <nav class="top-menu">
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="register.html" class="active">Register Project</a></li>
+          <li><a href="projects.html">Project Showcase</a></li>
+          <li><a href="announcements.html">Announcements</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="index.html">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+    <aside class="sidebar">
+      <ul>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="register.html" class="active">Register Project</a></li>
+        <li><a href="projects.html">Project Showcase</a></li>
+        <li><a href="announcements.html">Announcements</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="index.html">Logout</a></li>
+      </ul>
+    </aside>
+    <main class="main-content">
+      <h1>Register Your Project</h1>
+      <form id="projectRegistrationForm">
+        <div class="input-group">
+          <label for="projectName">Project Name</label>
+          <input type="text" id="projectName" name="projectName" required placeholder="Enter project name" />
+        </div>
+        <div class="input-group">
+          <label for="description">Description</label>
+          <textarea id="description" name="description" required placeholder="Describe your project"></textarea>
+        </div>
+        <div class="input-group">
+          <label for="category">Category</label>
+          <select id="category" name="category" required>
+            <option value="">Select category</option>
+            <option value="health">Health & Food</option>
+            <option value="education">Education</option>
+            <option value="community">Community & Impact</option>
+          </select>
+        </div>
+        <button type="submit" class="btn">Submit Project</button>
+      </form>
+    </main>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>

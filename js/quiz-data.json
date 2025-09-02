@@ -1,0 +1,27 @@
+[
+  {
+    "question": "Which vitamin is primarily obtained from sunlight?",
+    "options": ["Vitamin A", "Vitamin B12", "Vitamin C", "Vitamin D"],
+    "answerIndex": 3
+  },
+  {
+    "question": "What nutrient is the main source of energy for the body?",
+    "options": ["Proteins", "Carbohydrates", "Fats", "Vitamins"],
+    "answerIndex": 1
+  },
+  {
+    "question": "Which mineral is important for healthy bones and teeth?",
+    "options": ["Iron", "Calcium", "Potassium", "Zinc"],
+    "answerIndex": 1
+  },
+  {
+    "question": "Which of these is a good source of dietary fiber?",
+    "options": ["White bread", "Brown rice", "Butter", "Cheese"],
+    "answerIndex": 1
+  },
+  {
+    "question": "What is the recommended daily water intake for an average adult?",
+    "options": ["1 liter", "2 liters", "3 liters", "4 liters"],
+    "answerIndex": 1
+  }
+]

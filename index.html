@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>NutriLearn - Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container auth-container">
+    <div class="form-box login-form active">
+      <h2>Login</h2>
+      <form id="loginForm" class="auth-form">
+        <div class="input-box">
+          <input type="email" id="loginEmail" name="email" required autocomplete="email" />
+          <label for="loginEmail">Email</label>
+          <box-icon name="envelope" type="solid"></box-icon>
+        </div>
+        <div class="input-box">
+          <input type="password" id="loginPassword" name="password" required autocomplete="current-password" />
+          <label for="loginPassword">Password</label>
+          <box-icon name="lock-alt" type="solid"></box-icon>
+        </div>
+        <button type="submit" class="btn glowing-btn">Login</button>
+      </form>
+      <p class="toggle-link">
+        Don't have an account? <a href="#" id="showSignup">Sign Up</a>
+      </p>
+      <p class="forgot-password-link">
+        <a href="reset-password.html">Forgot Password?</a>
+      </p>
+    </div>
+
+    <div class="form-box signup-form">
+      <h2>Sign Up</h2>
+      <form id="registerForm" class="auth-form">
+        <div class="input-box">
+          <input type="text" id="fullName" name="fullName" required autocomplete="name" />
+          <label for="fullName">Full Name</label>
+          <box-icon name="user" type="solid"></box-icon>
+        </div>
+        <div class="input-box">
+          <input type="email" id="registerEmail" name="email" required autocomplete="email" />
+          <label for="registerEmail">Email</label>
+          <box-icon name="envelope" type="solid"></box-icon>
+        </div>
+        <div class="input-box">
+          <input type="password" id="registerPassword" name="password" required autocomplete="new-password" />
+          <label for="registerPassword">Password</label>
+          <box-icon name="lock-alt" type="solid"></box-icon>
+        </div>
+        <div class="input-box">
+          <input type="password" id="confirmPassword" name="confirmPassword" required autocomplete="new-password" />
+          <label for="confirmPassword">Confirm Password</label>
+          <box-icon name="lock-alt" type="solid"></box-icon>
+        </div>
+        <div class="password-helper-text" id="passwordHelperText">
+          Password must be at least 8 characters, include uppercase, lowercase, number, and special character.
+        </div>
+        <button type="submit" class="btn glowing-btn">Sign Up</button>
+      </form>
+      <p class="toggle-link">
+        Already have an account? <a href="#" id="showLogin">Login</a>
+      </p>
+    </div>
+
+    <div class="info-content auth-info">
+      <h2>WELCOME BACK!</h2>
+      <p>We are happy to have you with us again. If you need anything, we are here to help.</p>
+    </div>
+
+    <div class="curved-shape"></div>
+    <div class="curved-shape2"></div>
+  </div>
+</body>
+</html>
