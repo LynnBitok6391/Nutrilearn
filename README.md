@@ -23,12 +23,14 @@ Nutrilearn is a nutrition and wellness web application that provides personalize
 ## Setup Instructions
 
 1. Clone the repository:
+
    ```
    git clone https://github.com/LynnBitok6391/Nutrilearn.git
    cd Nutrilearn
    ```
 
 2. Create and activate a virtual environment:
+
    ```
    python -m venv .venv
    .venv\Scripts\activate   # Windows
@@ -36,6 +38,7 @@ Nutrilearn is a nutrition and wellness web application that provides personalize
    ```
 
 3. Install dependencies:
+
    ```
    pip install -r requirements.txt
    ```
@@ -43,11 +46,13 @@ Nutrilearn is a nutrition and wellness web application that provides personalize
 4. Configure environment variables and update `app.py` with your secret keys and email credentials.
 
 5. Initialize the database:
+
    ```
    python app.py
    ```
 
 6. Run the Flask app:
+
    ```
    python app.py
    ```
