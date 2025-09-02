@@ -1,77 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>NutriLearn - Login</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./style.css" />
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NutriLearn - Login & Signup</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="container auth-container">
-    <div class="form-box login-form active">
-      <h2>Login</h2>
-      <form id="loginForm" class="auth-form">
-        <div class="input-box">
-          <input type="email" id="loginEmail" name="email" required autocomplete="email" />
-          <label for="loginEmail">Email</label>
-          <box-icon name="envelope" type="solid"></box-icon>
-        </div>
-        <div class="input-box">
-          <input type="password" id="loginPassword" name="password" required autocomplete="current-password" />
-          <label for="loginPassword">Password</label>
-          <box-icon name="lock-alt" type="solid"></box-icon>
-        </div>
-        <button type="submit" class="btn glowing-btn">Login</button>
-      </form>
-      <p class="toggle-link">
-        Don't have an account? <a href="#" id="showSignup">Sign Up</a>
-      </p>
-      <p class="forgot-password-link">
-        <a href="reset-password.html">Forgot Password?</a>
-      </p>
-    </div>
+  <div class="auth-container" role="main" aria-label="Authentication forms">
+    <div class="auth-card">
+      <div class="tabs" role="tablist" aria-label="Login and Sign Up Tabs">
+        <button class="tab-button active" id="login-tab" role="tab" aria-selected="true" aria-controls="login-form" tabindex="0">Login</button>
+        <button class="tab-button" id="signup-tab" role="tab" aria-selected="false" aria-controls="signup-form" tabindex="-1">Sign Up</button>
+      </div>
 
-    <div class="form-box signup-form">
-      <h2>Sign Up</h2>
-      <form id="registerForm" class="auth-form">
-        <div class="input-box">
-          <input type="text" id="fullName" name="fullName" required autocomplete="name" />
-          <label for="fullName">Full Name</label>
-          <box-icon name="user" type="solid"></box-icon>
-        </div>
-        <div class="input-box">
-          <input type="email" id="registerEmail" name="email" required autocomplete="email" />
-          <label for="registerEmail">Email</label>
-          <box-icon name="envelope" type="solid"></box-icon>
-        </div>
-        <div class="input-box">
-          <input type="password" id="registerPassword" name="password" required autocomplete="new-password" />
-          <label for="registerPassword">Password</label>
-          <box-icon name="lock-alt" type="solid"></box-icon>
-        </div>
-        <div class="input-box">
-          <input type="password" id="confirmPassword" name="confirmPassword" required autocomplete="new-password" />
-          <label for="confirmPassword">Confirm Password</label>
-          <box-icon name="lock-alt" type="solid"></box-icon>
-        </div>
-        <div class="password-helper-text" id="passwordHelperText">
-          Password must be at least 8 characters, include uppercase, lowercase, number, and special character.
-        </div>
-        <button type="submit" class="btn glowing-btn">Sign Up</button>
-      </form>
-      <p class="toggle-link">
-        Already have an account? <a href="#" id="showLogin">Login</a>
-      </p>
-    </div>
+      <div class="form-container">
+        <!-- Login Form -->
+        <form id="login-form" class="auth-form active" role="tabpanel" aria-labelledby="login-tab" tabindex="0" novalidate>
+          <h2>Welcome Back</h2>
+          <div class="form-group">
+            <input type="email" id="login-email" name="email" required aria-required="true" aria-describedby="login-email-error" autocomplete="email" placeholder=" ">
+            <label for="login-email">Email</label>
+            <span class="error-message" id="login-email-error" aria-live="polite"></span>
+          </div>
+          <div class="form-group">
+            <input type="password" id="login-password" name="password" required aria-required="true" aria-describedby="login-password-error" autocomplete="current-password" placeholder=" ">
+            <label for="login-password">Password</label>
+            <span class="error-message" id="login-password-error" aria-live="polite"></span>
+          </div>
+          <button type="submit" class="auth-button">Login</button>
+          <a href="#" class="forgot-password" tabindex="0">Forgot Password?</a>
+        </form>
 
-    <div class="info-content auth-info">
-      <h2>WELCOME BACK!</h2>
-      <p>We are happy to have you with us again. If you need anything, we are here to help.</p>
-    </div>
+        <!-- Signup Form -->
+        <form id="signup-form" class="auth-form" role="tabpanel" aria-labelledby="signup-tab" tabindex="-1" novalidate>
+          <h2>Create Account</h2>
+          <div class="form-group">
+            <input type="text" id="signup-fullname" name="fullname" required aria-required="true" aria-describedby="signup-fullname-error" autocomplete="name" placeholder=" ">
+            <label for="signup-fullname">Full Name</label>
+            <span class="error-message" id="signup-fullname-error" aria-live="polite"></span>
+          </div>
+          <div class="form-group">
+            <input type="email" id="signup-email" name="email" required aria-required="true" aria-describedby="signup-email-error" autocomplete="email" placeholder=" ">
+            <label for="signup-email">Email</label>
+            <span class="error-message" id="signup-email-error" aria-live="polite"></span>
+          </div>
+          <div class="form-group">
+            <input type="password" id="signup-password" name="password" required aria-required="true" aria-describedby="signup-password-error" autocomplete="new-password" placeholder=" ">
+            <label for="signup-password">Password</label>
+            <span class="error-message" id="signup-password-error" aria-live="polite"></span>
+          </div>
+          <div class="form-group">
+            <input type="password" id="signup-confirm-password" name="confirmPassword" required aria-required="true" aria-describedby="signup-confirm-password-error" autocomplete="new-password" placeholder=" ">
+            <label for="signup-confirm-password">Confirm Password</label>
+            <span class="error-message" id="signup-confirm-password-error" aria-live="polite"></span>
+          </div>
+          <div class="password-requirements" aria-live="polite">
+            Password must be at least 8 characters with uppercase, lowercase, number, and symbol.
+          </div>
+          <button type="submit" class="auth-button">Sign Up</button>
+        </form>
 
-    <div class="curved-shape"></div>
-    <div class="curved-shape2"></div>
+        <!-- Forgot Password Form -->
+        <form id="forgot-form" class="auth-form" role="tabpanel" tabindex="-1" novalidate>
+          <h2>Reset Password</h2>
+          <div class="form-group">
+            <input type="email" id="forgot-email" name="email" required aria-required="true" aria-describedby="forgot-email-error" autocomplete="email" placeholder=" ">
+            <label for="forgot-email">Email</label>
+            <span class="error-message" id="forgot-email-error" aria-live="polite"></span>
+          </div>
+          <button type="submit" class="auth-button">Send Reset Link</button>
+          <p class="back-link"><a href="#" id="back-to-login" tabindex="0">Back to Login</a></p>
+        </form>
+      </div>
+    </div>
   </div>
+  <script src="js/ui.js"></script>
 </body>
 </html>

@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Signup form validation and submission
   const signupFormElement = document.getElementById('signup-form');
-  signupFormElement.addEventListener('submit', function(e) {
+  signupFormElement.addEventListener('submit', async function(e) {
     e.preventDefault();
     const fullname = document.getElementById('signup-fullname').value.trim();
     const email = document.getElementById('signup-email').value.trim();
@@ -186,11 +186,31 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     if (isValid) {
-      console.log('Signup Form Data:', { fullname, email, password });
-      alert('Sign up successful! Check console for form data.');
-      signupFormElement.reset();
-      // Switch to login tab after successful signup
-      document.getElementById('login-tab').click();
+      try {
+        const response = await fetch('/api/signup', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ fullname, email, password })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          // Store JWT token in localStorage if returned
+          if (data.access_token) {
+            localStorage.setItem('access_token', data.access_token);
+          }
+          // Redirect to dashboard
+          window.location.href = 'dashboard.html';
+        } else {
+          // Show error message from backend
+          showError('signup-password-error', data.error || 'Signup failed');
+        }
+      } catch (error) {
+        showError('signup-password-error', 'An error occurred. Please try again.');
+      }
     }
   });
 
@@ -229,7 +249,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Forgot password form validation and submission
   const forgotFormElement = document.getElementById('forgot-form');
-  forgotFormElement.addEventListener('submit', function(e) {
+  forgotFormElement.addEventListener('submit', async function(e) {
     e.preventDefault();
     const email = document.getElementById('forgot-email').value.trim();
 
@@ -246,10 +266,33 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     if (isValid) {
-      console.log('Forgot Password Email:', email);
-      alert('Password reset link sent! Check console for email.');
-      forgotFormElement.reset();
-      showLoginTab();
+      try {
+        const response = await fetch('/api/reset-password', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ email })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          // Show success message and reset form
+          showError('forgot-email-error', 'Password reset link sent! Please check your email.');
+          forgotFormElement.reset();
+          // Optionally switch back to login tab after a delay
+          setTimeout(() => {
+            showLoginTab();
+            clearError('forgot-email-error');
+          }, 3000);
+        } else {
+          // Show error message from backend
+          showError('forgot-email-error', data.error || 'Failed to send reset link');
+        }
+      } catch (error) {
+        showError('forgot-email-error', 'An error occurred. Please try again.');
+      }
     }
   });
 });

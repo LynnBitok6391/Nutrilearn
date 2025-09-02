@@ -11,22 +11,37 @@
 </head>
 <body>
   <div class="dashboard-layout">
-    <aside class="sidebar" id="sidebar">
-      <div class="user-info" id="userInfo" style="padding: 15px; border-bottom: 1px solid #ddd; margin-bottom: 10px; display: none;">
-        <p style="margin: 0; font-weight: bold;">Welcome, <span id="userName"></span></p>
+    <header class="top-nav">
+      <div class="logo">
+        <img src="images/logo.png" alt="NutriLearn Logo" />
+        <span>NutriLearn</span>
       </div>
-      <ul>
-        <li><a href="dashboard.html" class="active">Dashboard</a></li>
-        <li><a href="meal-recommender.html">Meal Recommender</a></li>
-        <li><a href="quizzes.html">Quizzes</a></li>
-        <li><a href="community.html">Recipes</a></li>
-        <li><a href="chatbot.html">Chatbot</a></li>
-        <li><a href="settings.html">Settings</a></li>
-        <li><a href="profile.html">Profile</a></li>
-        <li><button id="logoutBtn" style="width: 100%; padding: 10px; background: #dc3545; color: white; border: none; border-radius: 4px; cursor: pointer; display: none;">Logout</button></li>
-      </ul>
-    </aside>
-    <main class="main-content">
+      <nav class="top-menu">
+        <ul>
+          <li><a href="dashboard.html" class="active">Dashboard</a></li>
+          <li><a href="meal-recommender.html">Meal Recommender</a></li>
+          <li><a href="quizzes.html">Quizzes</a></li>
+          <li><a href="community.html">Recipes</a></li>
+          <li><a href="chatbot.html">Chatbot</a></li>
+          <li><a href="settings.html">Settings</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><button id="logoutBtn" class="btn logout-btn">Logout</button></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="dashboard-content">
+      <aside class="sidebar" id="sidebar">
+        <ul>
+          <li><a href="dashboard.html" class="active">Dashboard</a></li>
+          <li><a href="meal-recommender.html">Meal Recommender</a></li>
+          <li><a href="quizzes.html">Quizzes</a></li>
+          <li><a href="community.html">Recipes</a></li>
+          <li><a href="chatbot.html">Chatbot</a></li>
+          <li><a href="settings.html">Settings</a></li>
+          <li><a href="profile.html">Profile</a></li>
+        </ul>
+      </aside>
+      <main class="main-content">
       <h1>Welcome to NutriLearn Dashboard</h1>
       <p>Track your nutrition journey and achieve your health goals!</p>
       <div class="stats-cards">
@@ -43,7 +58,8 @@
           <p>45</p>
         </div>
       </div>
-    </main>
+      </main>
+    </div>
   </div>
   <div id="chatbotWidget">
     <button id="chatbotToggle" aria-label="Toggle Chatbot" title="NutriLearn AI Assistant">🤖</button>
